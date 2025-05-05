@@ -41,6 +41,9 @@ const useTypingEffect = (text, typingSpeed = 100, erasingSpeed = 50, delay = 100
 };
 
 const DisplayBlog = () => {
+
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState("");
   const [selectedBlog, setSelectedBlog] = useState(null);
@@ -62,7 +65,7 @@ const DisplayBlog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/blog/get");
+        const response = await axios.get(`${BASE_URL}/api/blog/get`);
         const blogDataWithImages = response.data.map((blog) => {
           const base64Image = btoa(
             new Uint8Array(blog.image.data).reduce((data, byte) => data + String.fromCharCode(byte), "")
@@ -103,7 +106,7 @@ const DisplayBlog = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/blog/update/${editingBlog._id}`,
+        `${BASE_URL}/api/blog/update/${editingBlog._id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -133,7 +136,7 @@ const DisplayBlog = () => {
 
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/blog/delete/${blogIdToDelete}`);
+      await axios.delete(`${BASE_URL}/api/blog/delete/${blogIdToDelete}`);
       setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== blogIdToDelete));
       setShowConfirmModal(false);
       setBlogIdToDelete(null);

@@ -40,6 +40,9 @@ const useTypingEffect = (text, typingSpeed = 100, erasingSpeed = 50, delay = 100
 };
 
 const ProjectDisplay = () => {
+
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [projects, setProjects] = useState([]);
   const [error, setError] = useState("");
   const [editingProject, setEditingProject] = useState(null);
@@ -56,7 +59,7 @@ const ProjectDisplay = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/get");
+        const response = await axios.get(`${BASE_URL}/api/admin/get`);
         const projectDataWithImages = response.data.map((project) => {
           const base64Image = btoa(
             new Uint8Array(project.image.data).reduce(
@@ -83,7 +86,7 @@ const ProjectDisplay = () => {
 
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/delete/${projectIdToDelete}`);
+      await axios.delete(`${BASE_URL}/api/admin/delete/${projectIdToDelete}`);
       setProjects((prevProjects) => prevProjects.filter((project) => project._id !== projectIdToDelete));
       setShowConfirmModal(false);
       setProjectIdToDelete(null);
@@ -111,7 +114,7 @@ const ProjectDisplay = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/admin/update/${editingProject._id}`,
+        `${BASE_URL}/api/admin/update/${editingProject._id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

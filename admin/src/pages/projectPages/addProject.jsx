@@ -4,7 +4,11 @@ import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import { motion } from "framer-motion";
 
+
 const AddProject = () => {
+
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [selectedFile, setSelectedFile] = useState(null);
   const [description, setDescription] = useState("");
   const [projectType, setProjectType] = useState(""); // New state
@@ -46,7 +50,7 @@ const AddProject = () => {
     formData.append("projectType", projectType); // Include project type
 
     try {
-      await axios.post("http://localhost:5000/api/admin/add", formData, {
+      await axios.post(`${BASE_URL}/api/admin/add`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setMessage({ text: "✅ Project created successfully!", type: "success" });

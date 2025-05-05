@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from "framer-motion"; // Add Framer Motion
 import bg1 from "../../assets/bg-3.jpg";
 
 const Project = () => {
+
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null); // New State
@@ -13,7 +16,7 @@ const Project = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin/get");
+        const response = await axios.get(`${BASE_URL}/api/admin/get`);
         const projectDataWithImages = response.data.map((project) => {
           const base64Image = btoa(
             new Uint8Array(project.image.data).reduce(

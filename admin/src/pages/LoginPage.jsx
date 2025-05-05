@@ -4,6 +4,9 @@ import axios from 'axios';
 import { motion } from 'framer-motion'; // Import Framer Motion
 
 function LoginPage() {
+
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -13,7 +16,7 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/admin/login', { username, password });
+      const response = await axios.post(`${BASE_URL}/api/admin/login`, { username, password });
       const token = response.data.token;
 
       sessionStorage.setItem('adminToken', token);

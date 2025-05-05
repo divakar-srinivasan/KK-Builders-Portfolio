@@ -5,6 +5,9 @@ import axios from "axios";
 import { motion } from "framer-motion";
 
 const AddBlog = () => {
+
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [selectedFile, setSelectedFile] = useState(null);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -50,7 +53,7 @@ const AddBlog = () => {
     formData.append("content", content);
 
     try {
-      await axios.post("http://localhost:5000/api/blog/add", formData, {
+      await axios.post(`${BASE_URL}/api/blog/add`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setMessage({ text: "✅ Blog created successfully!", type: "success" });

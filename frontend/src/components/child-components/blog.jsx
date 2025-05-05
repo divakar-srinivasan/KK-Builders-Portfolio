@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import bg1 from "../../assets/bg-3.jpg";
 
 const Blog = () => {
+
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [blogs, setBlogs] = useState([]);
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
@@ -13,7 +16,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/blog/get");
+        const response = await axios.get(`${BASE_URL}/api/blog/get`);
         const blogDataWithImages = response.data.map((blog) => {
           const base64Image = btoa(
             new Uint8Array(blog.image.data).reduce(
