@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 .bg-login{
     background-image: url("./assets/bg-3.jpg");
     background-position: center;
