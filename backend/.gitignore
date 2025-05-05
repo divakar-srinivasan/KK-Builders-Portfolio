@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.* 
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache directory
+.npm/
+
+# Build output
+dist/
+build/
+
+# Debugging
+.vscode/
+*.local
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Dependency directories
+jspm_packages/
+
+# Binaries for Node
+*.node
+
+# IDEs
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# PM2 logs
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Other
+.cache/
+.tmp/
