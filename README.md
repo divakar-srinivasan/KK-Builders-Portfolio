@@ -1,3 +1,9 @@
+# Live Server
+
+https://kk-builders-portfolio-frontend.onrender.com
+
+---
+
 # KK Builders Portfolio
 
 A full-stack portfolio web application for KK Builders, featuring a modern frontend built with React, Vite, and Tailwind CSS, and a backend powered by Node.js and Express. The project showcases company information, projects, blogs, and more, with admin functionality for content management.
@@ -147,9 +153,6 @@ Backend requires:
 4. Push to the branch (`git push origin feature/YourFeature`)
 5. Open a pull request
 
-## License
-This project is licensed under the MIT License.
-
 ## Contact
-For questions or support, contact the project maintainer at [your-email@example.com].
+For questions or support, contact the project maintainer at [sdivakar2005@gmail.com].
 
