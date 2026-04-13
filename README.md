@@ -684,7 +684,7 @@ Based on the code structure, the intended deployment model is likely:
 6. Run linting and manual smoke checks before opening a pull request.
 7. Document any new environment variables, routes, or operational assumptions in this README.
 
-## 16. Screenshot 🖼️
+## 16.🖼️ Screenshot 
 
 <img width="1488" height="626" alt="Screenshot 2026-04-13 154124" src="https://github.com/user-attachments/assets/bf0f35d2-fe21-4217-b3b6-feff33dc3297" />
 <img width="1902" height="818" alt="Screenshot 2026-04-13 154140" src="https://github.com/user-attachments/assets/5f625b9f-7b1b-4a93-be7c-aa7782ae3c88" />
@@ -699,7 +699,7 @@ Based on the code structure, the intended deployment model is likely:
 <img width="1909" height="970" alt="Screenshot 2026-04-13 154452" src="https://github.com/user-attachments/assets/8f496f32-2020-4243-aba0-cf5416da2b1f" />
 <img width="1903" height="973" alt="Screenshot 2026-04-13 154514" src="https://github.com/user-attachments/assets/f7ac7a77-7a96-4cd1-b94b-71d835522799" />
 
-## 17. Contact
+## 17. 🔎 Contact
 
 For any queries or support, feel free to reach out:
 
